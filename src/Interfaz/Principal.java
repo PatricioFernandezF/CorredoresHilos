@@ -9,10 +9,12 @@ import javax.swing.border.EmptyBorder;
 
 import Logica.Corredor;
 import Logica.Equipo;
+import javax.swing.JLabel;
+import javax.swing.ImageIcon;
 
 public class Principal extends JFrame {
 
-	private JPanel contentPane;
+	private static JPanel contentPane;
 	
 	public Equipo[] equipos;
 
@@ -40,12 +42,20 @@ public class Principal extends JFrame {
 	 */
 	public Principal() {
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		setBounds(100, 100, 1133, 643);
+		setBounds(100, 100, 918, 465);
 		contentPane = new JPanel();
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 		crearEquipos();
 		
 		setContentPane(contentPane);
+		contentPane.setLayout(null);
+		
+		
+		
+	}
+	
+	public static void anadirCorredor(JLabel corredor) {
+		contentPane.add(corredor);
 	}
 	
 	
@@ -53,13 +63,10 @@ public class Principal extends JFrame {
 		
 		this.equipos=new Equipo[3];
 		for (int i = 0; i < 3; i++) {
-			Equipo eq=new Equipo(50*i,i+1);
+			Equipo eq=new Equipo(10+100*i,i+1);
 			this.equipos[i]=eq;
 			
 		}
 		
 	}
-	
-	
-
 }
